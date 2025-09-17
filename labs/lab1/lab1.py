@@ -14,11 +14,27 @@ def draw_diamond():
     """
 
     # TODO: Prompt user for an odd number
+while True:
     height = int(input("Enter an odd number for the diamond height: "))
+    if height % 2 == 1 and height > 0 : 
+        break 
+    print ("please enter a positive odd number")
+
+#can't have negative number or even number
+        
 
     # TODO: Draw the top half of the diamond
+for i in range (height // 2+1):
+    stars = "x" * (2*i+1)
+    spaces = " " * (height // 2-i)
+    print (spaces + stars)
+
 
     # TODO: Draw the bottom half of the diamond
+for i in range (height // 2 - 1,-1,-1):
+    stars = "x" * (2*i+1)
+    spaces = " " * (height // 2-i)
+    print (spaces + stars)
 
 # Uncomment to test Part 1
 # draw_diamond()
@@ -40,16 +56,26 @@ def text_analysis():
 
     # TODO: Count letters
     letters = 0
+    for char in text:
+        if char .isalpha():
+            letters += 1     
 
     # TODO: Count words
+    words = len(text.split())
 
     # TODO: Count sentences
+    sentences = 0 
+    for char in text:
+        if char in "?!.":
+            sentences += 1
+        
+
 
     # TODO: Print the results
     print(f"Letters: {letters}")
-    print(f"Words: {0}")        # replace 0
-    print(f"Sentences: {0}")    # replace 0
-
+    print(f"Words: {words}")        
+    print(f"Sentences: {sentences}")   
+     
 # Uncomment to test Part 2
 # text_analysis()
 
