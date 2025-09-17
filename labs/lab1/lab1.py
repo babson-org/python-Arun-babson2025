@@ -1,6 +1,6 @@
 """
 Lab 1 – Python Basics
-Author: <Your Name>
+Author: Arun Gupta
 Instructions: Complete each part below. Save your work and commit + sync in Codespaces.
 """
 
@@ -12,6 +12,7 @@ def draw_diamond():
     Ask the user for an odd number for the diamond height
     and print a symmetric diamond of that height.
     """
+
     # TODO: Prompt user for an odd number
     height = int(input("Enter an odd number for the diamond height: "))
 

@@ -37,7 +37,12 @@ clear_screen()
 #16 - For Loop
 Print all numbers from 1 to 20, skipping multiples of 3.
 '''
-# enter code here
+for num in range(1, 21):
+    if num % 3 == 0:
+        continue
+    print(num)
+
+pause = input('pause')
 
 
 
@@ -59,7 +64,14 @@ clear_screen()
 #18 - Break / Continue
 Print numbers 1-10 but stop printing when you reach 7 and skip 3.
 '''
-# enter code here
+for num in range(1, 11):
+    if num == 3:
+        continue  # Skip 3
+    if num == 7:
+        break     # Stop the loop at 7
+    print(num)
+
+pause = input('pause')
 
 
 
