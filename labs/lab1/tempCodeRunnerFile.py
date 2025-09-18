@@ -1,12 +1,35 @@
+# ==============================
+# Main Program
+# ==============================
+def main():
+    while True:
+        print("Lab 1 - Python Basics")
+        print("1. Draw Diamond")
+        print("2. Text Analysis")
+        print("3. Caesar Cipher")
+        choice = input("Select part to run (1-3): ")
+        
+        if choice == "1":
+            draw_diamond()
+        elif choice == "2":
+            text_analysis()
+        elif choice == "3":
+            caesar_cipher()
+        else:
+            exit()
+
+
+
 """
-Lab 1 – Python Basics
-Author: Arun Gupta
+Lab 1 - Python Basics
+Author: <Your Name>
 Instructions: Complete each part below. Save your work and commit + sync in Codespaces.
 """
 
 # ==============================
 # Part 1: Draw a Diamond
 # ==============================
+# 
 def draw_diamond():
     """
     Ask the user for an odd number for the diamond height
@@ -36,7 +59,7 @@ for i in range (height // 2 - 1,-1,-1):
     spaces = " " * (height // 2-i)
     print (spaces + stars)
 
-# Uncomment to test Part 1
+
 # draw_diamond()
 
 
@@ -51,31 +74,24 @@ def text_analysis():
         - Number of words   (use split())
         - Number of sentences (., ?, !) 
     """
+
+    print("you have some work todo!, text_analysis")
+
     # TODO: Get user input
     text = input("Enter some text: ")
 
     # TODO: Count letters
     letters = 0
-    for char in text:
-        if char .isalpha():
-            letters += 1     
 
     # TODO: Count words
-    words = len(text.split())
 
     # TODO: Count sentences
-    sentences = 0 
-    for char in text:
-        if char in "?!.":
-            sentences += 1
-        
-
 
     # TODO: Print the results
     print(f"Letters: {letters}")
-    print(f"Words: {words}")        
-    print(f"Sentences: {sentences}")   
-     
+    print(f"Words: {0}")        # replace 0
+    print(f"Sentences: {0}")    # replace 0
+
 # Uncomment to test Part 2
 # text_analysis()
 
@@ -88,6 +104,9 @@ def caesar_cipher():
     Ask the user for text and a shift value.
     Provide options to encrypt or decrypt the text using a Caesar cipher.
     """
+
+    print("you have some work todo!, caesar_cypher")
+
     # TODO: Get user input text
     text = input("Enter text: ")
 
@@ -96,9 +115,27 @@ def caesar_cipher():
 
     # TODO: Ask user whether to encrypt or decrypt
     choice = input("Type 'e' to encrypt or 'd' to decrypt: ").lower()
+    
 
     # TODO: Implement encryption and decryption logic
     result = ""
+    
+    #reverse the shift
+    if choice == 'd':
+        shift = -shift
+
+    for char in text:
+        if char.isalpha():
+            if char.isupper():
+                base = ord('A')
+                shifted = (ord(char) - base + shift) % 26
+                result += chr(shifted + base)
+            else:
+                base = ord('a')
+                shifted = (ord(char) - base + shift) % 26
+                result += chr(shifted + base)
+        else:
+            result += char
 
     # TODO: Print the final result
     print("Result:", result)
@@ -107,24 +144,7 @@ def caesar_cipher():
 # caesar_cipher()
 
 
-# ==============================
-# Main Program
-# ==============================
-def main():
-    print("Lab 1 - Python Basics")
-    print("1. Draw Diamond")
-    print("2. Text Analysis")
-    print("3. Caesar Cipher")
-    choice = input("Select part to run (1-3): ")
-    
-    if choice == "1":
-        draw_diamond()
-    elif choice == "2":
-        text_analysis()
-    elif choice == "3":
-        caesar_cipher()
-    else:
-        print("Invalid choice.")
+
 
 if __name__ == "__main__":
     main()
