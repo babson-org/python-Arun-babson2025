@@ -1,6 +1,7 @@
 # ==============================
 # Main Program
 # ==============================
+'''
 def main():
     while True:
         print("Lab 1 - Python Basics")
@@ -20,18 +21,18 @@ def main():
 
 
 
-"""
+
 Lab 1 - Python Basics
 Author: <Your Name>
 Instructions: Complete each part below. Save your work and commit + sync in Codespaces.
-"""
+
 
 # ==============================
 # Part 1: Draw a Diamond
 # ==============================
 # not much to explain here, straightforward with each part. the first part is basically ensuring user inputs a positive odd number or else the diamond can't run
 # the next parts initially i had the diamond filled and not empty, but had to switch it and make the diamond empty
-
+'''
 
 def draw_diamond():
     """
@@ -40,7 +41,17 @@ def draw_diamond():
     """
     height = 0
     # TODO: Prompt user for an odd number
+    '''
+    indentation here is wrong. what you have above is
+    your entire function. what's below is outside the
+    function and in global scope.  Need to shift everything
+    below by 4 spaces
+
 while True:
+    
+    use a try catch block with an else here.
+    
+    
     height = int(input("Enter an odd number for the diamond height: "))
     if height % 2 == 1 and height > 0 : 
         break 
@@ -48,7 +59,7 @@ while True:
 
 #can't have negative number or even number
         
-
+    
     # TODO: Draw the top half of the diamond
     # when i == 0 this essentially means only draw one x on top row then the rest is hollow. Also had to make it so there was ..x or spaces before the x was inputted because if not 
     #the diamond would be symmetrical
@@ -69,9 +80,40 @@ for i in range (height // 2 - 1,-1,-1):
     else: 
         inner = 2 * i - 1 
         print (spaces + 'x' + " " * inner + "x")
+    '''
 
 
-# draw_diamond()
+    # TODO: Draw the top half of the diamond
+    # when i == 0 this essentially means only draw one x on top row then the rest is hollow. Also had to make it so there was ..x or spaces before the x was inputted because if not 
+    # the diamond would be symmetrical
+
+    while True:
+    
+    
+        height = int(input("Enter an odd number for the diamond height: "))
+        if height % 2 == 1 and height > 0 : 
+            break 
+        print ("please enter a positive odd number")
+
+    for i in range (height // 2 + 1):
+        spaces = " " * (height // 2-i)
+        if i == 0: 
+            print (spaces + 'x')
+        else: 
+            inner = 2 * i - 1 # for some reason when i tried to just do the inner 2*i-1 in the print statement it wouldn't work. so i had to make inner a variable and it worked
+            print (spaces + 'x' + " " * inner + "x")
+
+        # TODO: Draw the bottom half of the diamond
+        #pretty much mirrored, it, the 2 - 1, -1 -1 
+    for i in range (height // 2 - 1,-1,-1):
+        spaces = " " * (height // 2-i)
+        if i == 0: 
+            print (spaces + 'x')
+        else: 
+            inner = 2 * i - 1 
+            print (spaces + 'x' + " " * inner + "x")
+
+draw_diamond()
 
 
 # ==============================
@@ -115,7 +157,7 @@ def text_analysis():
     print(f"Words: {words}")        
     print(f"Sentences: {sentences}")   
 # Uncomment to test Part 2
-# text_analysis()
+text_analysis()
 
 
 # ==============================
@@ -165,10 +207,11 @@ def caesar_cipher():
     print("Result:", result)
 
 # Uncomment to test Part 3
-# caesar_cipher()
+caesar_cipher()
 
 
-
+'''
 
 if __name__ == "__main__":
     main()
+'''
