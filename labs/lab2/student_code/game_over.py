@@ -9,8 +9,19 @@ def game_over(board: list[int]):
         or if ther are no open moves left on the board
         Returns True if the game has a winner or no remaining moves, False otherwise.
     """
+    full = True
+    for cell in board:
+        if cell != 10 and cell != -10:
+            full = False
+            break
 
-    # TODO: Check if all cells are filled (abs(cell) == 10)
     # TODO: Use calc_score to check if someone has won
+    result = calc_score(board)
+
     # TODO: Return True if game over, otherwise False
-    pass
+    if result == 30 or result == -30 or full:
+        return True
+    else:
+        return False    
+                
+    
