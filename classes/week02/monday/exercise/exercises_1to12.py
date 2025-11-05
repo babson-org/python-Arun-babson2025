@@ -5,6 +5,16 @@ from classes.week00.second_class.utils import clear_screen
 Write down the steps a program would need to make a cup of tea. Then implement a Python 
 function make_tea() that prints each step.
 '''
+steps=['step1','step2','step3']
+def make_tea(myList):
+    myList[2] = "step5"
+    for item in myList:
+        print(item)
+    
+
+make_tea(steps)
+print(steps)
+
 # enter your code here
 
 
@@ -51,8 +61,10 @@ import sys
 import platform
 import pprint
 
+#pprint.pprint(dir(sys))
+print(type(sys.version))
+print(sys.version, sys.platform)
 
-print(dir(sys))
 pause=input('pause')
 clear_screen()
 '''
@@ -157,9 +169,6 @@ pause=input('pause')
 clear_screen()
 '''
 #11
-
-x = 2**3**2
-print (x)
 
 Ask the user to input their favorite quote. Save it to a file quotes.txt 
 and read it back to print it.
